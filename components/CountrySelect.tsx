@@ -1,12 +1,31 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const CountrySelect = () => (
-  <div className="field">
-    <div className="control">
-      <div className="select">
-        <select defaultValue={undefined}>
-          <option disabled selected hidden value={undefined}>
-            Select Country
+import { InputErrorIcon } from "./InputErrorIcon";
+
+export const CountrySelect = ({
+  label,
+  name,
+  placeholder,
+  icon,
+  ref_,
+  error,
+  touched
+}) => (
+  <div className="field is-expanded">
+    <label className="label">{label}</label>
+    <div className="control has-icons-left has-icons-right">
+      {/* TODO: Check if bulma classes can fulfil width: 100% */}
+      <div className="select" style={{ width: "100%" }}>
+        <select placeholder={placeholder}
+          defaultValue={"Country"}
+          name={name}
+          ref={ref_}
+          className={
+            "input " + (touched ? (!!error ? "is-danger" : "is-success") : "")
+          }
+          style={{ width: "100%" }}>
+          <option disabled hidden value={"Country"}>
+            Country
           </option>
           <optgroup>
             <option value="US">United States</option>
@@ -321,7 +340,14 @@ export const CountrySelect = () => (
             <option value="ZW">Zimbabwe</option>
           </optgroup>
         </select>
+
       </div>
+      <span className="icon is-small is-left">
+          <FontAwesomeIcon icon={icon} />
+        </span>
+
+        {!!touched && <InputErrorIcon error={error} />}
     </div>
+    {!!error && <p className="help is-danger">{error.message}</p>}
   </div>
 );

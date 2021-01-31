@@ -1,0 +1,5 @@
+export * from './Footer'
+export * from './Header'
+export * from './How'
+export * from './PopUp'
+export * from './Reviews'

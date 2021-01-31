@@ -14,8 +14,8 @@ export const Gallery = () => {
   return (
     <>
       <div className="root">
-        <figure className="image is-square">
-          <img src="/images/expanded-belt.webp" alt="expanded belt" />
+        <figure className="image">
+          <img className='is-1x1' src="/images/placeholder.png" alt="expanded belt" />
         </figure>
         {/* Main */}
         {/* <Swiper slidesPerView={1} direction="horizontal" zoom navigation>

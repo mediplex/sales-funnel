@@ -1,9 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faExclamationTriangle
-} from "@fortawesome/free-solid-svg-icons";
+import { InputErrorIcon } from "./InputErrorIcon";
 
 export const Input = ({
   label,
@@ -17,6 +14,7 @@ export const Input = ({
 }) => {
   return (
     <div className="field is-expanded">
+      {/* TODO: add labelFor */}
       <label className="label">{label}</label>
       <div className="control has-icons-left has-icons-right">
         <input
@@ -39,19 +37,4 @@ export const Input = ({
   );
 };
 
-export const InputErrorIcon = ({ error }) => {
-  return (
-    <span
-      className={
-        "icon is-small is-right " +
-        (!!error ? "has-text-danger" : "has-text-success")
-      }
-    >
-      {!!error ? (
-        <FontAwesomeIcon icon={faExclamationTriangle} />
-      ) : (
-        <FontAwesomeIcon icon={faCheck} />
-      )}
-    </span>
-  );
-};
+

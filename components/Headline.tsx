@@ -14,7 +14,7 @@ export const Headline = () => {
         <p className="subtitle is-3 has-text-centered">
           New Back Braces with metalic supports helps to keep your back in a
           confortable position at home and the office...
-        </p>
+      </p>
       </div>
     </>
   );

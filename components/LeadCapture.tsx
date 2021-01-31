@@ -105,7 +105,17 @@ export const LeadCapture = ({ cta }) => {
           touched={touched["City"]}
         />
 
-        <CountrySelect />
+        <CountrySelect
+            name="Country"
+            placeholder="Country"
+            icon={faHome}
+            ref_={register({
+              required: "The Country is required"
+            })}
+            error={errors["Country"]}
+            touched={touched["Country"]}
+        
+        />
         {/* <Input
           type="input"
           name="Country"
